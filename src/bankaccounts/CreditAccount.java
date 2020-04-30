@@ -23,5 +23,13 @@ public class CreditAccount extends Account {
         else
             System.out.println("Limit exceeded. The limit is: " + limit);
     }
+    @Override
+    public void applyPercent(BigDecimal percent)
+    {
+        if(this.getBalance().compareTo(BigDecimal.ZERO) < 0)
+        {
+            this.setBalance(this.getBalance().multiply(percent.add(BigDecimal.ONE)));
+        }
+    }
 
 }

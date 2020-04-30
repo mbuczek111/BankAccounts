@@ -13,10 +13,7 @@ public abstract class Account {
         balance = BigDecimal.ZERO;
         accountNumber = ++lastAccountNumber;
     }
-    public void applyPercent(BigDecimal percent)
-    {
-        this.balance=this.balance.multiply(percent.add(BigDecimal.ONE));
-    }
+    public abstract void applyPercent(BigDecimal percent);
 
     public void topUp(BigDecimal amount)
     {

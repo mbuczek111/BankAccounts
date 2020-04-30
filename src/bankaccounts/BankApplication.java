@@ -41,10 +41,12 @@ public class BankApplication {
 
         System.out.println(nb.getBank("AliorBank"));
         System.out.println(creditAccount.getAccountNumber());
-        creditAccount.withdraw(BigDecimal.valueOf(285));
+        creditAccount.withdraw(BigDecimal.valueOf(650));
         creditAccount.applyPercent(BigDecimal.valueOf(0.1));
         System.out.println(creditAccount.getBalance());
         System.out.println(nb.getBank("AliorBank"));
-
+        depositAccount.topUp(BigDecimal.valueOf(100));
+        depositAccount.applyPercent(BigDecimal.valueOf(0.1));
+        System.out.println(depositAccount.getBalance());
     }
 }
