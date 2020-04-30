@@ -23,14 +23,14 @@ public class NationalBank {
     {
         banks.add(bank);
     }
-    public Bank getBank(String name) {
-
-        for (Iterator<Bank> it = banks.iterator(); it.hasNext(); ) {
-            Bank b = it.next();
+    public Bank getBank(String name)
+    {
+        for (Bank b:banks) {
             if (b.getName().equals(name))
                 return b;
         }
         return null;
     }
+
 
 }

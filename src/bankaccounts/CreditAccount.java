@@ -9,8 +9,8 @@ public class CreditAccount extends Account {
     public void transfer(BigDecimal amount, Account anotherAccount)
     {
         if(this.getBalance().subtract(amount).compareTo(limit) > 0) {
-            super.transfer(amount,anotherAccount);
-        }
+            this.setBalance(this.getBalance().subtract(amount));
+            anotherAccount.setBalance(anotherAccount.getBalance().add(amount));        }
         else
             System.out.println("Limit exceeded. The limit is: " + limit);
     }
@@ -18,7 +18,7 @@ public class CreditAccount extends Account {
     public void withdraw(BigDecimal amount)
     {
         if(this.getBalance().subtract(amount).compareTo(limit) > 0) {
-            super.withdraw(amount);
+            this.setBalance(this.getBalance().subtract(amount));
         }
         else
             System.out.println("Limit exceeded. The limit is: " + limit);

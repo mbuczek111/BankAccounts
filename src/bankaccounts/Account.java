@@ -23,16 +23,9 @@ public abstract class Account {
         balance = balance.add(amount);
     }
 
-    public void withdraw(BigDecimal amount)
-    {
-        balance=balance.subtract(amount);
-    }
+    public abstract void withdraw(BigDecimal amount);
 
-    public void transfer(BigDecimal amount, Account anotherAccount)
-    {
-        this.balance=this.balance.subtract(amount);
-        anotherAccount.balance=anotherAccount.balance.add(amount);
-    }
+    public abstract void transfer(BigDecimal amount, Account anotherAccount);
 
     public int getAccountNumber() {
         return accountNumber;
@@ -40,6 +33,10 @@ public abstract class Account {
 
     public BigDecimal getBalance() {
         return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 
     @Override

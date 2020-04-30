@@ -44,5 +44,7 @@ public class BankApplication {
         creditAccount.withdraw(BigDecimal.valueOf(285));
         creditAccount.applyPercent(BigDecimal.valueOf(0.1));
         System.out.println(creditAccount.getBalance());
+        System.out.println(nb.getBank("AliorBank"));
+
     }
 }
